@@ -89,6 +89,7 @@
       btnWithDraw.addEventListener("click",function(){
           const withdrawNumber = getInput("withDrawAmount");
           updateSpanTg("withdrawBalance",withdrawNumber);
+          updateSpanTg("currentBalance", -1 * withdrawNumber);
           resetValue("withDrawAmount");
           //console.log(withdrawAmount);
       })
