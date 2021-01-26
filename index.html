@@ -76,9 +76,11 @@
       depositBtn.addEventListener("click",function(){
           //const depositAmount = document.getElementById("depositAmount").value;
           const depositNumber = getInput("depositAmount");
+          if(!(isNaN(depositNumber))){
+            updateSpanTg("currentDeposit", depositNumber);
+            updateSpanTg("currentBalance", depositNumber);
+          }
           
-          updateSpanTg("currentDeposit", depositNumber);
-          updateSpanTg("currentBalance", depositNumber);
           resetValue("depositAmount");
         //   document.getElementById("depositAmount").value = "";
            
@@ -88,8 +90,10 @@
       const btnWithDraw = document.getElementById("addWithdraw");
       btnWithDraw.addEventListener("click",function(){
           const withdrawNumber = getInput("withDrawAmount");
-          updateSpanTg("withdrawBalance",withdrawNumber);
-          updateSpanTg("currentBalance", -1 * withdrawNumber);
+          if(!(isNaN(withdrawNumber))){
+            updateSpanTg("withdrawBalance",withdrawNumber);
+            updateSpanTg("currentBalance", -1 * withdrawNumber);
+          }
           resetValue("withDrawAmount");
           //console.log(withdrawAmount);
       })
