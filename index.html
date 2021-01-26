@@ -74,7 +74,6 @@
       // Deposit event handler
       const depositBtn = document.getElementById("addDeposit");
       depositBtn.addEventListener("click",function(){
-          //const depositAmount = document.getElementById("depositAmount").value;
           const depositNumber = getInput("depositAmount");
           if(!(isNaN(depositNumber))){
             updateSpanTg("currentDeposit", depositNumber);
@@ -82,9 +81,6 @@
           }
           
           resetValue("depositAmount");
-        //   document.getElementById("depositAmount").value = "";
-           
-          //console.log(totalDeposit);
       })
 
       const btnWithDraw = document.getElementById("addWithdraw");
@@ -95,7 +91,6 @@
             updateSpanTg("currentBalance", -1 * withdrawNumber);
           }
           resetValue("withDrawAmount");
-          //console.log(withdrawAmount);
       })
 
       function resetValue(id){
